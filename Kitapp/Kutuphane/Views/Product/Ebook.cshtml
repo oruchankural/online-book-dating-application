@@ -1,0 +1,171 @@
+﻿@using Kutuphane.Models.Siniflar
+@model List<Kitaplar>
+
+@{
+    ViewBag.Title = "Ebook";
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+
+<div class="carousel-inner">
+    <div class="carousel-item active">
+
+        <img class="d-block w-100" src="~/Content/book-images/EbookBanner-min.png" alt="First slide">
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row mb-4">
+                    <div class="col-md-12 d-flex justify-content-between align-items-center">
+                        <h4 class="product-select">Select Types of Products</h4>
+                        <form>
+
+                            <select name="bookcategory" class="selectpicker">
+                                <option value="">All</option>
+                                <option value="History">History</option>
+                                <option value="Novel">Novel</option>
+                                <option value="Story">Story</option>
+                                <option value="book">E-book</option>
+                                <option value="Utopic">Utopic</option>
+
+                            </select>
+                            <input type="submit" name="bookcategory" value="List" class="btn btn-warning" />
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+
+                    @foreach (var x in Model)
+                    {
+                        <div class="col-md-4 d-flex">
+                            <div class="product ftco-animate">
+                                <div class="img d-flex align-items-center justify-content-center" style="background-image: url(@x.BookImage);">
+                                    <div class="desc">
+                                        <p class="meta-prod d-flex">
+                          
+                                            <a data-toggle="modal" data-target="#exchangeModal" class="d-flex align-items-center justify-content-center"><span class="fa fa-chevron-down"></span></a>
+                                        
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text text-center">
+                                    <span class="seller">@ViewBag.type</span>
+                                    <span class="category">@x.Category</span>
+                                    <h2>@x.BookName</h2>
+                                    <span class="price">Free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exchangeModal" tabindex="-1" role="dialog" aria-labelledby="exchangeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">E-Book PDF</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+
+                                        <div class="form-group">
+                                            <label for="city">Download E-Book as pdf format</label>
+
+                                            <div class="form-control-file">
+                                                <a class="btn btn-warning" href="~/Content/book-images/e-kitap.pdf" download="e-book">Download</a>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar-box ftco-animate">
+                    <div class="categories">
+                        <h3>Product Types</h3>
+
+                        <ul class="p-0">
+                            <li><a href="Product?bookcategory=History&bookcategory=List">History <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=Novel&bookcategory=List">Novel <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=Story&bookcategory=List">Story <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=book&bookcategory=List">E-book <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=Utopic&bookcategory=List">Utopic <span class="fa fa-chevron-right"></span></a></li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="sidebar-box ftco-animate">
+                    <h3>Discounted Products</h3>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(/Content/book-images/5273fc3c05066827987c70be.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">George Orwell 1984 </a></h3>
+
+                            <div class="meta">
+
+
+                                <div><a href="#" class="text-success"><span class="fa fa-percent text-success"></span> 50</a></div>
+                                <p class="price price-sale">69.00 ₺</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+
+                        <a class="blog-img mr-4" style="background-image: url(/Content/book-images/0001914601001-1.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Tuğçe Işınsu Kısmet</a></h3>
+
+                            <div class="meta">
+                                <div><a href="#" class="text-success"><span class="fa fa-percent text-success"></span> 15</a></div>
+                                <p class="price price-sale">20.00 ₺</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(/Content/book-images/wi_220.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Kemal Tahir Devlet Ana</a></h3>
+
+                            <div class="meta">
+                                <div><a href="#" class="text-success"><span class="fa fa-percent text-success"></span> 25</a></div>
+                                <p class="price price-sale">29,70 ₺</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

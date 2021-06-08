@@ -1,0 +1,156 @@
+﻿@using Kutuphane.Models.Siniflar
+@model List<Exchange>
+
+
+@{
+    ViewBag.Title = "Exchangedetails";
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+
+<section class="ftco-section">
+    <div class="container">
+
+        @foreach (var x in Model)
+        {
+
+
+            <div class="row">
+                <div class="col-lg-6 mb-5 ftco-animate fadeInUp ftco-animated">
+                    <a href="images/prod-1.jpg"><img src="@x.BookImage" style="width:500px;"></a>
+                </div>
+                <div class="col-lg-6 product-details pl-md-5 ftco-animate fadeInUp ftco-animated">
+                    <p class="price"><span>@x.BookName</span></p>
+                    <div class="rating d-flex">
+
+                        <p class="text-left price ">
+                            <a class="mr-4" style="color: #000;">@x.BookPage -  Page </a>
+                        </p>
+                        <p class="text-left price ">
+                            <a class="mr-4" style="color: #000;">Writer :  @x.BookWriter</a>
+                        </p>
+
+                    </div>
+                    <p class="mr-5"><span>Delivery Area : @x.Location</span></p>
+                    <p class="card-header">Added by : @x.Username</p>
+
+
+
+                    <div class="row mt-4">
+
+                        <div class="w-100"></div>
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <a class="btn btn-warning" data-toggle="modal" data-target="#exchangeModal">Exchange</a>
+                </div>
+            </div>
+        }
+
+        <div class="modal fade" id="exchangeModal" tabindex="-1" role="dialog" aria-labelledby="exchangeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Exchange Process</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+                        @foreach (var y in Model)
+                        {
+                            <div class="card-header">
+
+                                <p class="font-weight-bold">Added User Informations</p>
+                                <p>Added Username : @y.Username</p>
+
+
+                            </div>
+                            <div class="card-header">
+                                <div class="form-group">
+                                  
+                             
+                                <p class="font-weight-bold">Current User Informations</p>
+                                @if (ViewBag.username == null)
+                                {
+                                    <div class="card-header bg-danger">
+                                        <h5 style="color:white;">Please login to exchange request</h5>
+                                    </div>
+
+                                }
+                                else
+                                {
+                                    <p>Current User : @ViewBag.username</p>
+                                }
+
+   </div>
+
+                            </div>
+                            <br />
+                            <form>
+
+                                <div class="form-group">
+                                    <label>Your Book</label>
+                                    <br />
+                                    <small>* Bookname,writer,page</small>
+                                    <input type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">Your City</label>
+                                    <select id="city" name="city" class="form-control">
+                                        <option value="ankara">Ankara</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Date Options</label>
+                                    <br />
+                                    <small>* If trade accepted , you will see details</small>
+                                    <select id="date" name="date" class="form-control">
+                                        <option value="date">@y.Location</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-warning">Send</button>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                    
+                </div>
+                       
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12 tab-wrap">
+
+            <div class="tab-content bg-light" id="v-pills-tabContent">
+
+                <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+                    <div class="p-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                        </svg>
+                        <h3 class="mb-4">How to exchange books ? </h3>
+                        <p>Need to create a new account for exchaning books.Then , login our system and go to user panel,Click to add book button then complete to required information.After adding books , we will check and confirm.</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+ 
+</section>
+

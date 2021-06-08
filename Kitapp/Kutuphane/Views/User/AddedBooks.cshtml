@@ -1,0 +1,139 @@
+﻿@using Kutuphane.Models.Siniflar
+@model List<Exchange>
+@{
+    ViewBag.Title = "AddedBooks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+    <div class="tab-content">
+        <br />
+        <h1 style="text-align:center;font-family:Montserrat;">Welcome , @Session["Username"]</h1>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+
+
+                    <div class="list-group list-group-flush">
+                        <a href="/User/UserPanel" class="list-group-item list-group-item-action bg-light">Profile</a>
+                        <a href="/User/AddBook" class="list-group-item list-group-item-action bg-light">Add Book</a>
+                        <a href="/User/AddedBooks" class="list-group-item list-group-item-action bg-light">Added Books</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Exchange History</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Order Tracking</a>
+
+                        <a href="/User/LogOut/" class="list-group-item list-group-item-action bg-light">Logout</a>
+                    </div>
+                </div>
+
+                <div class="col-md-10">
+
+                    <table class="table table-striped">
+
+                        <thead>
+                            <tr>
+                                <th>BookImage</th>
+                                <th>BookName</th>
+                                <th>Location</th>
+                                <th>Page</th>
+                                <th>Operate</th>
+
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var x in Model)
+                            {
+
+
+                                <tr>
+                                    <td><img src="@x.BookImage" width="100" height="100" /></td>
+                                    <td>@x.BookName</td>
+                                    <td>@x.Location</td>
+                                    <td>@x.BookPage</td>
+                                    <td>
+                                        <a href="/User/Index" class="btn-sm btn-success">Details</a>
+                                        <a href="/User/Index" class="btn-sm btn-warning">Update</a>
+                                    </td>
+
+                                </tr>
+
+                            }
+                        </tbody>
+
+
+
+
+
+                    </table>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="container py-5">
+            <div>
+                <div class="col-lg-8 mx-auto p-3 py-md-5">
+
+
+                    <h1>How to make trades</h1>
+
+
+
+
+                </div>
+                <div class="container">
+        
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2>Step 1  ➔</h2>
+
+                            <h2>Go to Page</h2>
+                            <p>Click on the Exchange page and view the books that are currently available for trade. You can also start a trade cycle if you want! </p>
+
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Step 2 ➔</h2>
+                            <h2>Select a Book</h2>
+                            <p>Choose one of the available books and set a meeting time. Recommend a book to the book owner and wait for approval.</p>
+
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Step 3 ✓</h2>
+                            <h2>Make a Request</h2>
+                            <p>After your approved request, grab the book that you will trade and go!</p>
+
+                        </div>
+                    </div>
+
+                    <hr>
+
+                </div>
+
+            </div>
+
+
+
+           
+
+
+            
+
+
+
+
+        </div>
+
+    </div>
+
+    
+</div>

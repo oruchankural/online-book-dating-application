@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "UserPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="container-fluid">
+    <div class="tab-content">
+        <br />
+        <h1 style="text-align:center;font-family:Montserrat;">Welcome , @Session["Username"]</h1>
+        <hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+
+
+                    <div class="list-group list-group-flush">
+                        <a href="/User/UserPanel" class="list-group-item list-group-item-action bg-light">Profile</a>
+                        <a href="/User/AddBook" class="list-group-item list-group-item-action bg-light">Add Book</a>
+                        <a href="/User/AddedBooks" class="list-group-item list-group-item-action bg-light">Added Books</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Exchange History</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Order Tracking</a>
+                        
+                        <a href="/User/LogOut/" class="list-group-item list-group-item-action bg-light">Logout</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="card ">
+                        <div class="container" align="center">
+                            <hr />
+                            <h2 style="font-family:Poppins;">User Information</h2>
+                            <div class="row">
+                                <div class=" col-md-6" style="width:500px;">
+
+                                    <h4 style="font-family:Poppins;">User Personel Information</h4>
+
+                                    <label class="form-control " style="background-color:gray;color:white;">Name & Surname</label>
+                                    <p class="form-control">User Name & Surname : @ViewBag.namesurname</p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Gender</label>
+                                    <p class="form-control">Gender : @ViewBag.gender  </p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Birth of Date</label>
+                                    <p class="form-control">Birtofdate : @ViewBag.date</p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Zodiac</label>
+                                    <p class="form-control">Zodiac : @ViewBag.b</p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Age</label>
+                                    <p class="form-control">Age : @ViewBag.age</p>
+
+
+
+                                </div>
+
+                                <div class=" col-md-6" style="width:500px;">
+
+                                    <h4 style="font-family:Poppins;">User Website Information</h4>
+
+                                    <label class="form-control " style="background-color:gray;color:white;">Email</label>
+                                    <p class="form-control">Email : @ViewBag.email</p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Username</label>
+                                    <p class="form-control">Username : @ViewBag.username</p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Password</label>
+                                    <p class="form-control">User Password : @ViewBag.password</p>
+                                    <label class="form-control " style="background-color:gray;color:white;">Address</label>
+                                    <p class="form-control">User Address : @ViewBag.adr</p>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

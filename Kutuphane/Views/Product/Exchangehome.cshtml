@@ -1,0 +1,44 @@
+﻿@using Kutuphane.Models.Siniflar
+@model List<Exchange>
+
+
+
+
+
+<section class="ftco-section">
+    <div class="container" align="center">
+        <h2 style="font-family:Montserrat;">Exchange Books</h2>
+        <hr />
+        <div class="row">
+
+            @foreach (var x in Model)
+            {
+                <div class="col-md-3 d-flex">
+                    <div class="product ftco-animate">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(@x.BookImage);">
+                            <div class="desc">
+
+                            </div>
+                        </div>
+                        <div class="text text-center">
+                            <span class="seller">@ViewBag.type</span>
+                            <span class="category">@x.BookName</span>
+                            <h2>@x.BookWriter</h2>
+                            <span class="category">@x.BookPage</span>
+                            <br />
+                            <span class="price">Added by : @x.Username</span>
+                            <br />
+                            <a href="/Product/Exchangedetails/@x.BookID" class="btn btn-outline-dark">Exchange</a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+      
+</section>

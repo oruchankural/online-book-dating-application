@@ -1,0 +1,121 @@
+﻿@using Kutuphane.Models.Siniflar
+@model List<Exchange>
+
+@{
+    ViewBag.Title = "Ebook";
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+<div class="carousel-inner">
+    <div class="carousel-item active">
+
+        <img class="d-block w-100" src="~/Content/book-images/Exchange-min.png" alt="First slide">
+    </div>
+</div>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row mb-4">
+                    <div class="col-md-12 d-flex justify-content-between align-items-center">
+                        <h4 class="product-select">Select Types of Products</h4>
+                        <form>
+
+                            <select name="bookcategory" class="selectpicker">
+                                <option value="">All</option>
+                                <option value="History">History</option>
+                                <option value="Novel">Novel</option>
+                                <option value="Story">Story</option>
+                                <option value="book">E-book</option>
+                                <option value="Utopic">Utopic</option>
+
+                            </select>
+                            <input type="submit" name="bookcategory" value="List" class="btn btn-warning" />
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+
+                    @foreach (var x in Model)
+                    {
+                        <div class="col-md-4 d-flex">
+                            <div class="product ftco-animate">
+                                <div class="img d-flex align-items-center justify-content-center" style="background-image: url(@x.BookImage);">
+                                    <div class="desc">
+
+                                    </div>
+                                </div>
+                                <div class="text text-center">
+                                    <span class="seller">@ViewBag.type</span>
+                                    <span class="category">@x.BookName</span>
+                                    <h2>@x.BookWriter</h2>
+                                    <span class="category">@x.BookPage</span>
+                                    <br />
+                                    <span class="price">Added by : @x.Username</span>
+                                    <br />
+                                    <a href="/Product/Exchangedetails/@x.BookID" class="btn btn-outline-dark">Exchange</a>
+                                  
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    }
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar-box ftco-animate">
+                    <div class="categories">
+                        <h3>Product Types</h3>
+
+                        <ul class="p-0">
+                            <li><a href="Product?bookcategory=History&bookcategory=List">History <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=Novel&bookcategory=List">Novel <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=Story&bookcategory=List">Story <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=book&bookcategory=List">E-book <span class="fa fa-chevron-right"></span></a></li>
+                            <li><a href="Product?bookcategory=Utopic&bookcategory=List">Utopic <span class="fa fa-chevron-right"></span></a></li>
+
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+                    <h3>About Exchange</h3>
+                    <p>Need to create a new account for exchaning books.Then , login our system and go to user panel,Click to add book button then complete to required information.After adding books , we will check and confirm.</p>
+                </div>
+                <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+                    <h3>Tags</h3>
+                    <div class="tagcloud">
+                        <a href="#" class="tag-cloud-link">exchange</a>
+                        <a href="#" class="tag-cloud-link">bookexchange</a>
+                        <a href="#" class="tag-cloud-link">socialbook</a>
+                        <a href="#" class="tag-cloud-link">readandbesocial</a>
+                        <a href="#" class="tag-cloud-link">discount</a>
+                        <a href="#" class="tag-cloud-link">books</a>
+                        <a href="#" class="tag-cloud-link">ebooks</a>
+                
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

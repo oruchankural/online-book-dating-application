@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+
+<div class="card ">
+    <div class="container" align="center">
+        <hr />
+        <h2 style="font-family:Poppins;">User Information</h2>
+        <div class="row">
+            <div class=" col-md-6" style="width:500px;">
+
+                <h4 style="font-family:Poppins;">User Personel Information</h4>
+
+                <label class="form-control " style="background-color:gray;color:white;">Name & Surname</label>
+                <p class="form-control">User Name & Surname : @ViewBag.namesurname</p>
+                <label class="form-control " style="background-color:gray;color:white;">Gender</label>
+                <p class="form-control">Gender : @ViewBag.gender  </p>
+                <label class="form-control " style="background-color:gray;color:white;">Birth of Date</label>
+                <p class="form-control">Birtofdate : @ViewBag.date</p>
+                <label class="form-control " style="background-color:gray;color:white;">Zodiac</label>
+                <p class="form-control">Zodiac : @ViewBag.b</p>
+                <label class="form-control " style="background-color:gray;color:white;">Age</label>
+                <p class="form-control">Age : @ViewBag.age</p>
+
+
+
+            </div>
+
+            <div class=" col-md-6" style="width:500px;">
+
+                <h4 style="font-family:Poppins;">User Website Information</h4>
+
+                <label class="form-control " style="background-color:gray;color:white;">Email</label>
+                <p class="form-control">Email : @ViewBag.email</p>
+                <label class="form-control " style="background-color:gray;color:white;">Username</label>
+                <p class="form-control">Username : @ViewBag.username</p>
+                <label class="form-control " style="background-color:gray;color:white;">Password</label>
+                <p class="form-control">User Password : @ViewBag.password</p>
+                <label class="form-control " style="background-color:gray;color:white;">Address</label>
+                <p class="form-control">User Address : @ViewBag.adr</p>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

@@ -1,0 +1,55 @@
+﻿@using Kutuphane.Models.Siniflar
+@model List<Kitaplar>
+
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_SingleLayout.cshtml";
+
+}
+
+
+    <section class="ftco-section">
+        <div class="container" align="center">
+            <h2 style="font-family:Montserrat;">Popular Books</h2>
+            <hr />
+            <div class="row">
+
+
+                @foreach (var x in Model)
+                {
+                    <div class="col-md-3 d-flex">
+                        <div class="product ftco-animate">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(@x.BookImage);">
+                                <div class="desc">
+                                    <p class="meta-prod d-flex">
+                                        <a href="/Checkout/Index/@x.BookID" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
+                                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
+                                        <a href="/Product/Productdetails/@x.BookID" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text text-center">
+                                <span class="seller">@ViewBag.type</span>
+                                <span class="category">@x.Category</span>
+                                <h2>@x.BookName</h2>
+                                <span class="category">@x.PageNumber</span>
+                                <br />
+                                <a href="/Checkout/Index/@x.BookID" class="btn btn-dark">
+                                    Buy
+                                    <span class="price" style="color:white;">
+                                        @x.Price ₺
+                                    </span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+
+    </section>

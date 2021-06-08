@@ -1,0 +1,114 @@
+﻿@model Kutuphane.Models.Siniflar.Exchange
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="tab-content">
+        <br />
+        <h1 style="text-align:center;font-family:Montserrat;">Welcome , @Session["Username"]</h1>
+        <hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+
+
+                    <div class="list-group list-group-flush">
+                        <a href="/User/UserPanel" class="list-group-item list-group-item-action bg-light">Profile</a>
+                        <a href="/User/AddBook" class="list-group-item list-group-item-action bg-light">Add Book</a>
+                        <a href="/User/AddedBooks" class="list-group-item list-group-item-action bg-light">Added Books</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Exchange History</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Order Tracking</a>
+                       
+                        <a href="/User/LogOut/" class="list-group-item list-group-item-action bg-light">Logout</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+
+
+                    <div class="card ">
+                        <div class="container" align="center">
+                            <hr />
+                            <h2 style="font-family:Poppins;">Adding Book</h2>
+                            <div class="row">
+
+                                <div class="col-md-12" style="width:500px;">
+
+                                    <h4 style="font-family:Poppins;">Book Information</h4>
+
+
+                                    <form class="col-form-label" method="post">
+
+                                        <div class="form-group" hidden>
+                                            @Html.LabelFor(x => x.Username)
+                                            <input type="text" value="@Session["Username"]" hidden name="Username" />
+                                            @*<label>Book Name</label>
+                                                <input type="text" class="form-control" />*@
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(x => x.BookName)
+                                            @Html.TextBoxFor(x => x.BookName, new { @class = "form-control" })
+                                            @*<label>Book Name</label>
+                                                <input type="text" class="form-control" />*@
+
+                                        </div>
+                                        <div class="form-group">
+                                        
+                                            @*<input type="text" class="form-control" />*@
+                                            @Html.LabelFor(x => x.BookWriter)
+                                            @Html.TextBoxFor(x => x.BookWriter, new { @class = "form-control" })
+
+                                        </div>
+                                        <div class="form-group">
+                                            @*<label>Book Page</label>
+                                                <input type="text" class="form-control" />*@
+                                            @Html.LabelFor(x => x.BookPage)
+                                            @Html.TextBoxFor(x => x.BookPage, new { @class = "form-control" })
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            @*<label>Book Page</label>
+                                                <input type="text" class="form-control" />*@
+                                            @Html.LabelFor(x => x.BookImage) * (Just use image url )
+                                            @Html.TextBoxFor(x => x.BookImage, new { @class = "form-control" })
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="locate">Location Options</label>
+                                            <select id="locate" name="Location" class="form-control">
+                                                <option value="Ankara-Leman - 09.05.2021 / 16.00">Leman 09.05.2021 16.00</option>
+                                                <option value="Ankara-Starbucks - 10.05.2021 / 17.00">Starbucks 10.05.2021 17.00</option>
+                                                <option value="Ankara-Bookcafe - 11.05.2021 / 18.00">Bookcafe 11.05.2021 18.00</option>
+                                                <option value="Ankara-Limon - 12.05.2021 / 19.00">Limon 12.05.2021 19.00</option>
+                                            </select>
+
+
+
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Add</button>
+
+                                    </form>
+
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
