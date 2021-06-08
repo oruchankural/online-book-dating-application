@@ -1,5 +1,7 @@
 # Kutuphane
 
+Ecem SOL , Enes GÜRBÜZ , Oruç Han KURAL
+
 For this project , we used Asp.net MVC 5 and Entityframework for back-end.
 For front-end we used Html , Css , Javascript and Js framework(React.js) and bootstrap
 libraries.
